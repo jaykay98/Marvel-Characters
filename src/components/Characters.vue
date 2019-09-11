@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="mt-2" align="center">Marvel Characters</h1>
-    <div v-if="loading === true" class="text-center">
+    <div v-if="loading === true">
       <Loading />
     </div>
     <div v-else-if="error === true">
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { public_key } from "../marvel";
 import ErrorMessage from "@/components/ErrorMessage.vue";
 import Loading from "@/components/Loading.vue";
 import axios from "axios";
@@ -76,7 +77,7 @@ export default {
     getCharacters() {
       axios
         .get(
-          `https://gateway.marvel.com/v1/public/characters?apikey=${process.env.VUE_APP_MARVEL_PUBLIC_KEY}`
+          `https://gateway.marvel.com/v1/public/characters?apikey=${public_key}`
         )
         .then(result => {
           result.data.data.results.forEach(item => {

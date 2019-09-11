@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <HomeButton />
-    <div v-if="loading === true" class="text-center">
+    <div v-if="loading === true">
       <Loading />
     </div>
     <div v-else-if="error === true">
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { public_key } from "../marvel";
 import HomeButton from "@/components/ReturnHomeButton.vue";
 import ErrorMessage from "@/components/ErrorMessage.vue";
 import Loading from "@/components/Loading.vue";
@@ -53,7 +54,7 @@ export default {
 
       axios
         .get(
-          `https://gateway.marvel.com/v1/public/characters/${characterId}?apikey=${process.env.VUE_APP_MARVEL_PUBLIC_KEY}`
+          `https://gateway.marvel.com/v1/public/characters/${characterId}?apikey=${public_key}`
         )
         .then(result => {
           result.data.data.results.forEach(item => {
