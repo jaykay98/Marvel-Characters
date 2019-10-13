@@ -53,7 +53,10 @@ import Loading from "@/components/Loading.vue";
 import axios from "axios";
 export default {
   name: "Characters",
-
+  metaInfo: {
+    title: 'Marvel Characters',
+    titleTemplate: null,
+  },
   data() {
     return {
       loading: true,

@@ -12,6 +12,11 @@
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
 export default {
+  name: 'App',
+  metaInfo: {
+    title: 'Marvel Directory',
+    titleTemplate: '%s | Marvel Directory'
+  },
   components: {
     Navbar,
     Footer

@@ -13,6 +13,11 @@ import HomeButton from "@/components/ReturnHomeButton.vue";
 export default {
   components: {
     HomeButton
+  },
+  name: 'About',
+  metaInfo: {
+    title: 'About Us',
+    titleTemplate: null,
   }
 };
 </script>
