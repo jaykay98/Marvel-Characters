@@ -23,8 +23,8 @@
               class="my-3"
               :title="character.name"
               :img-src="images[index]"
-              alt="Profile Image"
               img-top
+              img-alt="Profile Image"
             >
               <b-button
                 block
